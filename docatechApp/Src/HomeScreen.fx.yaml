@@ -1,0 +1,118 @@
+"HomeScreen As screen.'autoLayout_HeaderFooter_ver1.0'":
+    BackgroundImage: =fondo_pantalla_inicio_3
+    ImagePosition: =ImagePosition.Fill
+
+    home_body As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        Width: =HomeScreen.Width
+        ZIndex: =1
+
+        home_description As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =40
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            logo_container As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =80
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =300
+                ZIndex: =2
+
+                logo As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
+                    Font: =Font.'Lato Black'
+                    Height: =logo_container.Height
+                    PaddingLeft: =30
+                    Size: =40
+                    Text: ="Docatech"
+                    Width: =logo_container.Width
+                    ZIndex: =1
+
+            header_description As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                Height: =100
+                Size: =20
+                Text: |-
+                    ="ENTREGA DE TAREAS
+                    RÁPIDO Y FÁCIL"
+                Width: =home_description.Width
+                ZIndex: =3
+
+        form_footer_1 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =70
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =form_body.Width
+            Y: =568
+            ZIndex: =2
+
+            button_entregas As button:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0.6)
+                Height: =form_footer_1.Height * 0.9
+                OnSelect: =Navigate(TPScreen)
+                Size: =If(HomeScreen.Size <> 1, 20, 15)
+                Text: ="Entregas"
+                Width: =form_footer_1.Width * 0.40
+                ZIndex: =1
+
+            button_agregar As button:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0.6)
+                Height: =form_footer_1.Height * 0.9
+                OnSelect: |-
+                    =NewForm(form_docs_alumnos);
+                    Navigate(FormScreen)
+                Size: =If(HomeScreen.Size <> 1, 20, 15)
+                Text: |-
+                    ="Entregar Trabajo
+                    "
+                Width: =form_footer_1.Width * 0.4
+                ZIndex: =2
+
