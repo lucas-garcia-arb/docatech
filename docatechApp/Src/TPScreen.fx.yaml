@@ -1,0 +1,363 @@
+"TPScreen As screen.'autoLayout_HeaderFooter_ver1.0'":
+    BackgroundImage: =
+    ImagePosition: =ImagePosition.Fill
+
+    tp_body As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        Width: =Parent.Width
+        ZIndex: =1
+
+        tp_header As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =70
+            LayoutJustifyContent: =If(TPScreen.Width > 800, LayoutJustifyContent.Start, LayoutJustifyContent.Center)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            logo_container_1 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =300
+                ZIndex: =1
+
+                logo_1 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(56, 96, 178, 1)
+                    Font: =Font.'Lato Black'
+                    Height: =logo_container_1.Height
+                    LayoutMinHeight: =10
+                    OnSelect: =Navigate(HomeScreen)
+                    PaddingLeft: =30
+                    Size: =40
+                    Text: ="Docatech"
+                    Width: =logo_container_1.Width
+                    ZIndex: =1
+
+        tp_main As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingBottom: =10
+            PaddingTop: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            tp_entregas_title As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =50
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =10
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                entregas_titulo As label:
+                    Align: =Align.Center
+                    Color: =RGBA(56, 96, 178, 1)
+                    FillPortions: =1
+                    Font: =Font.'Lato Black'
+                    LayoutMinHeight: =10
+                    Size: =24
+                    Text: ="Entregas Realizadas"
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            entregas_realizadas As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =600
+                Items: =Sort(entregas_docs_universidad_1,'Fecha de Creación',SortOrder.Descending)
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =40
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =20
+                TemplateSize: =300
+                ZIndex: =2
+
+                elemento As groupContainer.horizontalAutoLayoutContainer:
+                    BorderColor: =RGBA(56, 96, 178, 1)
+                    BorderThickness: =3
+                    Height: =Parent.TemplateHeight
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =1
+
+                    elemento_alumno As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Fill: =RGBA(56, 96, 178, 1)
+                        FillPortions: =0
+                        Height: =80
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                        "'elemento_alumno-img' As groupContainer.verticalAutoLayoutContainer":
+                            AlignInContainer: =AlignInContainer.Center
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =Parent.Height
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Width: =80
+                            ZIndex: =1
+
+                            "'alumno-img' As image":
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =70
+                                Image: =ThisItem.'Foto Perfil Alumno'
+                                RadiusBottomLeft: =10
+                                RadiusBottomRight: =10
+                                RadiusTopLeft: =10
+                                RadiusTopRight: =10
+                                Width: =70
+                                ZIndex: =1
+
+                        "'elemento_alumno-info' As groupContainer.verticalAutoLayoutContainer":
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =30
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            ZIndex: =2
+
+                            nombre_alumno As label:
+                                Color: =RGBA(255, 255, 255, 1)
+                                FillPortions: =1
+                                Font: =Font.'Lato Black'
+                                Size: =If(TPScreen.Width < 700, 16, 18)
+                                Text: =ThisItem.'Nombre del Alumno'
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                        icon_container As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =Parent.Height
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Width: =80
+                            ZIndex: =3
+
+                            icon_edit As image:
+                                Height: =70
+                                Image: ='basil_edit-solid_1'
+                                OnSelect: |-
+                                    =Navigate(form_docs_alumnos);
+                                    Set(Element, ThisItem);
+                                    EditForm(form_docs_alumnos);
+                                Width: =60
+                                ZIndex: =1
+
+                    entrega_container As groupContainer.verticalAutoLayoutContainer:
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        elemento_entrega As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            FillPortions: =2
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =40
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            entrega_titulo As label:
+                                Align: =Align.Center
+                                FillPortions: =3
+                                Font: =Font.'Lato Black'
+                                LayoutMinHeight: =10
+                                Size: =If(TPScreen.Width > 800, 20, 15)
+                                Text: =ThisItem.'Titulo de Documento'
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            entrega_materia As label:
+                                Align: =Align.Center
+                                FillPortions: =2
+                                Font: =Font.Lato
+                                Size: =15
+                                Text: =ThisItem.Materia
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                            entrega_fecha As label:
+                                Align: =Align.Center
+                                FillPortions: =2
+                                LayoutMinHeight: =10
+                                Text: =ThisItem.'Fecha de Creación'
+                                Width: =Parent.Width
+                                ZIndex: =3
+
+                        elemento_nota As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Height: =Parent.Height
+                            LayoutMinHeight: =40
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            entrega_titulo_1 As label:
+                                Align: =Align.Center
+                                FillPortions: =If(Parent.Width > 800, 2, 1)
+                                Font: =Font.'Lato Black'
+                                Height: =Parent.Height
+                                LayoutMinWidth: =30
+                                Size: =If(TPScreen.Width > 800, 20, 15)
+                                Text: ="Nota"
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            entrega_materia_1 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(255, 255, 255, 1)
+                                BorderThickness: =5
+                                Color: =RGBA(255, 255, 255, 1)
+                                Fill: =If(ThisItem.Calificaciones.Value="Corregir",RGBA(56 ,96, 178, 1),If(ThisItem.Calificaciones.Value="1" Or ThisItem.Calificaciones.Value="2" Or ThisItem.Calificaciones.Value="3",RGBA(200,50,50,1),If(ThisItem.Calificaciones.Value="4" Or ThisItem.Calificaciones.Value="5" Or ThisItem.Calificaciones.Value="6",RGBA(50,50,250,1),RGBA(50,250,50,1))))
+                                FillPortions: =1
+                                Font: =Font.Lato
+                                FontWeight: =FontWeight.Bold
+                                Height: =Parent.Height
+                                LayoutMinWidth: =10
+                                PaddingBottom: =2
+                                PaddingLeft: =2
+                                PaddingRight: =2
+                                PaddingTop: =2
+                                Size: =20
+                                Text: =ThisItem.Calificaciones.Value
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+        tp_footer As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =70
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =form_body.Width
+            Y: =568
+            ZIndex: =5
+
+            button_inicio As button:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0.6)
+                Height: =tp_footer.Height * 0.9
+                OnSelect: =Navigate(HomeScreen)
+                Size: =If(TPScreen.Size <> 1, 20, 15)
+                Text: ="Inicio"
+                Width: =tp_footer.Width * 0.4
+                ZIndex: =1
+
+            button_agregar2 As button:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0.6)
+                Height: =tp_footer.Height * 0.9
+                OnSelect: |-
+                    =NewForm(form_docs_alumnos);
+                    Navigate(FormScreen)
+                Size: =If(TPScreen.Size <> 1, 20, 15)
+                Text: |-
+                    ="Entregar Trabajo
+                    "
+                Width: =tp_footer.Width * 0.4
+                ZIndex: =2
+
